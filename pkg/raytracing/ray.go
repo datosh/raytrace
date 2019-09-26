@@ -9,6 +9,13 @@ type Ray struct {
 	B vector.Vec3
 }
 
+func NewRay(a, b vector.Vec3) Ray {
+	return Ray{
+		A: a,
+		B: b,
+	}
+}
+
 func (r *Ray) Origin() vector.Vec3 {
 	return r.A
 }
