@@ -63,7 +63,7 @@ func vecToColor(v vector.Vec3) color.RGBA {
 // The color goes from white to blue
 // lerp(t) = (1-t)*from + t*to
 func rayToColor(r ray.Ray) color.RGBA {
-	if hitSphere(vector.NewVec3(0.0, 0.0, -1.0), 0.5, r) {
+	if hitSphere(vector.NewVec3(0.0, 0.0, -1.0), 0.8, r) {
 		return vecToColor(vector.NewVec3(1.0, 0.0, 0.0))
 	}
 	unitDir := vector.Unit(r.Direction())
@@ -93,7 +93,7 @@ func main() {
 
 	origin := vector.NewVec3(0.0, 0.0, 0.0)
 
-	img := image.NewRGBA(image.Rect(0, 0, 200, 100))
+	img := image.NewRGBA(image.Rect(0, 0, 1920, 1080))
 	fmt.Printf("Image has size of %dx%d", img.Rect.Dx(), img.Rect.Dy())
 	for x := img.Rect.Max.X - 1; x >= img.Rect.Min.X; x-- {
 		for y := img.Rect.Min.Y; y < img.Rect.Max.Y; y++ {
